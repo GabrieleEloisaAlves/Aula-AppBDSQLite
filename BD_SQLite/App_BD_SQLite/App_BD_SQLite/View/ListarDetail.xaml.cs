@@ -31,5 +31,34 @@ namespace App_BD_SQLite.View
             MasterDetailPage p = (MasterDetailPage)Application.Current.MainPage;
             p.Detail = new NavigationPage(new CadastrarDetail(nota));
         }
+
+        private void SwFavorito_Toggled(object sender, ToggledEventArgs e)
+        {
+            ServicesBDNota dbNotas = new ServicesBDNota(App.DbPath);
+
+            if (swFavorito.IsToggled)
+            {
+                ListasNotas.ItemsSource = dbNotas.ListarFavoritos();
+            }
+            else
+            {
+                AtualizaLista();
+            }
+        }
+
+        private void BtLocalizar_Clicked(object sender, EventArgs e)
+        {
+            String titulo = "";
+            if (txtNota.Text != null) titulo = txtNota.Text;
+            ServicesBDNota dbNotas = new ServicesBDNota(App.DbPath);
+
+            ListasNotas.ItemsSource = dbNotas.Localizar(titulo);
+            txtNota.Text = "";
+        }
+
+        private void BtTodos_Clicked(object sender, EventArgs e)
+        {
+            AtualizaLista();
+        }
     }
 }

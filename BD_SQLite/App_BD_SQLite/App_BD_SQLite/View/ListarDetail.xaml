@@ -4,16 +4,30 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App_BD_SQLite.View.ListarDetail" BackgroundColor="LightSeaGreen">
+             x:Class="App_BD_SQLite.View.ListarDetail" BackgroundColor="#E4AFE2">
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Label Text="Lista de Registros de Notas" FontSize="Medium" TextColor="White"
+                <Label Text="Lista de Registros de Notas" FontSize="Large" TextColor="Black"
                        HorizontalOptions="CenterAndExpand"
                        FontAttributes="Bold"/>
             </StackLayout>
-            <ListView x:Name="ListasNotas" HasUnevenRows="True" 
-                      SeparatorColor="Red" Margin="15" BackgroundColor="White"
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Exibir apenas as notas favoritas" FontSize="Medium" TextColor="Black"
+                       HorizontalOptions="Start"
+                       FontAttributes="Bold"/>
+                <Switch x:Name="swFavorito" HorizontalOptions="End"
+                        Toggled="SwFavorito_Toggled"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="txtNota" Keyboard="Plain" Placeholder="Titulo da nota"
+                       HorizontalOptions="StartAndExpand"/>
+                <Button x:Name="btLocalizar" Text="Localizar"  Clicked="BtLocalizar_Clicked" />
+                <Button x:Name="btTodos" Text="Todos"  Clicked="BtTodos_Clicked" />
+            </StackLayout>
+            
+        <ListView x:Name="ListasNotas" HasUnevenRows="True" 
+                      SeparatorColor="Red" Margin="15" BackgroundColor="#FFFFFF"
                       ItemSelected="ListaNotas_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>

@@ -4,11 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App_BD_SQLite.View.CadastrarDetail">
+             x:Class="App_BD_SQLite.View.CadastrarDetail" BackgroundColor="#FAF3E9">
+    
     <ContentPage.Content>
+        
         <StackLayout>
-            
-            <Entry x:Name="txtTitulo" Keyboard="Plain"  Placeholder="Titulo da nota"/>
+           
+                
+
+                <Entry x:Name="txtTitulo" Keyboard="Plain"  Placeholder="Titulo da nota"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Nota favorita:" FontSize="Medium"/>
                 <Switch x:Name="swFavorito" HorizontalOptions="Start"/>
@@ -28,7 +32,7 @@
                
                 <Button x:Name="btCancelar" Text="Cancelar"
                         HorizontalOptions="FillAndExpand"
-                        Clicked="btCancelar_Clicked"/>
+                        Clicked="BtCancelar_Clicked"/>
                         
             </StackLayout>
 

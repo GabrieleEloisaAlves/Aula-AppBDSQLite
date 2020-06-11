@@ -7,18 +7,18 @@
              x:Class="App_BD_SQLite.View.PageMenu" IsPresented="True">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
-            <Grid BackgroundColor="LightSeaGreen">
+            <Grid BackgroundColor="#E9B1BA">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="160" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Row="0"
-                             BackgroundColor="Gray"
+                             BackgroundColor="#F4D6DB"
                              Padding="10"
                              Margin="10"
                              HorizontalOptions="FillAndExpand">
                     <Label Text="Menu de Ações"  VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"
-                           TextColor="White"
+                           TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="Large"/>
                 </StackLayout>
@@ -26,11 +26,13 @@
                              Spacing="10"
                              Padding="10"
                              Margin="10"
-                            BackgroundColor="#F3F2F0">
+                            BackgroundColor="#DCA6D0">
                     <Button Text="Home"
                             Clicked="Open_Home" />
+                    
                     <Button Text="Cadastrar"
                             Clicked="Open_Cadastrar" />
+                    
                     <Button Text="Listar"
                             Clicked="Open_Listar" />
                 </StackLayout>

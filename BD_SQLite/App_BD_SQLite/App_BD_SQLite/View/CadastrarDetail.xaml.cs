@@ -15,6 +15,13 @@ namespace App_BD_SQLite.View
     public partial class CadastrarDetail : ContentPage
     {
         int id;
+       
+        public CadastrarDetail()
+        {
+            InitializeComponent();
+        }
+        
+        
         public CadastrarDetail(ModelNota nota)
         {
             InitializeComponent();
@@ -28,7 +35,7 @@ namespace App_BD_SQLite.View
             swFavorito.IsToggled = nota.Favorito;
         }
 
-        private void btCancelar_Clicked(object sender, EventArgs e)
+        private void BtCancelar_Clicked(object sender, EventArgs e)
         {
             MasterDetailPage p = (MasterDetailPage)Application.Current.MainPage;
             p.Detail = new NavigationPage(new HomeDetail());
